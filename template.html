@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>$websiteTitle</title>
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="title" content="$websiteTitle">
+	<meta name="description" content="$websiteDesc">
+	<meta name="keywords" content="$websiteKeywords">
+	<meta name="robots" content="index, follow">
+	<meta name="language" content="English">
+	<meta name="author" content="$websiteName">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="$websiteUrl">
+	<meta property="og:title" content="$websiteTitle">
+	<meta property="og:description" content="$websiteDesc">
+	<meta property="og:image" content="$websiteUrl/$websiteImage">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="$websiteUrl?$websiteDateString">
+	<meta property="twitter:title" content="$websiteTitle">
+	<meta property="twitter:description" content="$websiteDesc">
+	<meta property="twitter:image" content="$websiteUrl/$websiteImage?$websiteDateString">
+
+	<link rel="stylesheet" rel="preconnect" href="index.css?$websiteDateString">
+	<link rel="canonical" href="$websiteUrl">
+
+	<link rel="icon" rel="preconnect" type="image/png" href="/favicon.svg?$websiteDateString">
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "MusicGroup",
+			"name": "$websiteName",
+			"url": "$websiteUrl",
+			"logo": "$websiteUrl/$websiteLogo",
+			"sameAs": "$websiteLinks",
+			"description": "$websiteDesc",
+			"genre": "$websiteGenres"
+		}
+	</script>
+</head>
+<body>
+	<main>
+		<header class="site-header" aria-label="site header">
+			<h1>
+				<a href="$websiteUrl" title="$websiteTitle | $websiteDesc" >$websiteName</a>
+			</h1>
+			<!-- <p class="desc">$websiteDesc</p> -->
+		</header>
+		$websiteContent
+
+		<footer class="site-footer" aria-label="site footer">
+			$websiteFooterLinks
+			<address>
+				<a href="mailto:info@heresybeats.com">$websiteTitle</a>
+				<span>2013-$websiteYear</span>
+			</address>
+		</footer>
+	</main>
+
+</body>
+</html>
