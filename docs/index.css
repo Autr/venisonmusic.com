@@ -1,33 +1,54 @@
 
-	:root {
-
-		--size: 14px;
-		--fg: #fff3f3;
-		--dark: #fff3f3;
-		--bg: #001919;
-		--fade: #fff3f3;
-		--width: 680px;
-	}
-
-	:root {
-
-		--border: calc( var(--size) * 0.682 );
-	}
-	@media screen and (max-width: 600px) {
-
-		:root {
-			--size: 2vw;
-		}
-	}
 
 	@font-face {
-		font-family: "StudioSunBalginBlack";
-		src: url("StudioSunBalginBlack.woff2") format("woff2");
+		font-family: 'StudioSunBalginBlack';
+		src: url('StudioSunBalginBlack.woff2') format('woff2');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 	}
 
+	/* Rector Regular */
+	@font-face {
+	    font-family: 'Rector';
+	    src: url('rectorwebregular.woff2') format('woff2');
+	    font-weight: 400;
+	    font-style: normal;
+	    font-display: swap;
+	}
+
+	/* ITC Avant Garde Gothic Medium */
+	@font-face {
+	    font-family: 'ITC';
+	    src: url('bitcavantgardegothicmedium.woff2') format('woff2');
+	    font-weight: 500;
+	    font-style: normal;
+	    font-display: swap;
+	}
+
+	:root {
+
+		--size: 14px;
+		--fg: #fff9f9;
+		--bg: #001010;
+		--fade: #303030;
+		--width: 520px;
+		--logo: 'Rector';
+		--title: 'ITC';
+		--body: 'ITC';
+		--radius: calc( var(--size) * 0.682 );
+		--border: calc( var(--size) * 0.682 * 0.682 * 0.682 );
+	}
+
+	:root {
+
+	}
+	@media screen and (max-width: 600px) {
+
+		:root {
+			/*--size: 2vw;*/
+		}
+	}
 
 
 	a, a:visited, a:hover, a:active {
@@ -40,6 +61,7 @@
 		font-weight: normal;
 		padding: 0;
 		margin: 0;
+		color: var(--fg);
 		list-style-type: none;
 		font-style: normal;
 	}
@@ -47,14 +69,14 @@
 	/* ========= HTML ========= */
 
 	html, body, main {
-		text-transform: uppercase;
-		font-family: 'StudioSunBalginBlack', sans-serif;
+		/*text-transform: uppercase;*/
+		font-family: var(--body), sans-serif;
 		color: var(--fg);
 		background: var(--bg);
 		font-size: var(--size);
 		padding: 0;
 		margin: 0;
-		letter-spacing: calc( 0.682em * 0.682 * 0.682 * 0.682 );
+		letter-spacing: calc( 0.682em * 0.682 * 0.682 * 0.682 * 0.682 * 0.682 * 0.682 );
 	}
 	* {
 		line-height: 1.2em;
@@ -66,11 +88,11 @@
 
 	.bandcamp-embed {
 		height: auto;
-		aspect-ratio: 1 / 1.4!important;
+		aspect-ratio: 1 / 1.5!important;
 		position: relative;
 		display: block;
 		overflow: hidden;
-		border-radius: var(--border);
+		border-radius: var(--radius);
 		overflow: hidden;
 	}
 	@media screen and (max-width: 600px) {
@@ -104,14 +126,15 @@
 	header.site-header h1 {
 		padding: 1.682em;
 		padding-bottom: 0em;
+		font-family: var(--logo), sans-serif;
 		/*padding-top: calc( 1.682em * 1.682);*/
 		/*overflow: clip;*/
 	}
 	header.site-header h1 a {
-		color: #fff;
+		color: var(--fg);
 		font-size: calc( 1.682em * 1.682 * 1.682 );
 		font-weight: bold;
-		border-bottom: var(--border) solid #fff;
+		border-bottom: var(--border) solid var(--fg);
 	}
 	header.site-header h1 span {
 		position: absolute;
@@ -134,61 +157,80 @@
 		text-align: center;
 	}
 
+	.intro {
+		text-align: left;
+		padding: 2em 2em;
+		font-size: 1em;
+		text-justify: word;
+		max-width: 472px;
+		box-sizing: border-box;
+		margin: 4em 1.682em;;
+		color: var(--bg);
+		background: var(--fg);
+		border-radius: var(--radius);
+		mix-blend-mode: difference;
+		line-height: 1.682em;
+		padding-top: 3em;
+	}
+
+	.intro span {
+		color: var(--bg);
+		/*font-style: italic;*/
+		font-size: calc( 1.682em * 1.682 * 1.682);
+		line-height: 0em;
+		font-family: Rector;
+	}
+
 	.release {
 		position: relative;
 		z-index: 1;
-		/*background: #fff;*/
-		overflow: clip;
+		/*overflow: clip;*/
 		padding: 0px;
-		border-radius: var(--border);
+		border-radius: var(--radius);
 		margin: calc( 1.682em * 1.682 * 1.682 * 1.682 ) 1.682em;
-		background: var(--fg);
-		border-bottom-left-radius: var(--border);
-		border-bottom-right-radius: var(--border);
+		border-radius: var(--radius);
+		mix-blend-mode: difference;
 	}
 
-	.release header {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		position: absolute;
-		left: calc(var(--border) * -1);
-		top: 0;
-		width: 100%;
+	.release-inner {
+		background: var(--fg);
+		border-radius: var(--radius);
 	}
+
 
 	.release .player {
 		position: relative;
 		padding: var(--border);
-		padding-top: calc(1.682em * 1.682 * 1.682);
+		padding-top: calc(1.682em);
 	}
 
 	.release h2 {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		position: sticky;
 		z-index: 2;
-		top: 1em;
+		top: calc( 2.3em);
 		padding-top: 0.682em;
 		align-self: flex-start;
 		width: 100%;
 		mix-blend-mode: difference;
+		font-size: calc(1.682em * 1.682);
 	}
 
 	.release h2 a {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		color: #fff;
+		/*border-bottom: var(--border) solid var(--fg);*/
 	}
 	.release h2 a .title {
 		transition: all 0.2s ease;
 	}
-	.release h2 a:hover .title {
-		border-bottom-color: var(--dark);
-	}
 
 	.meta {
-		margin-top: 0.682em;
+		top: -3.5em;
+		position: relative;
 	}
 
 	h2 span {
@@ -199,17 +241,17 @@
 		display: block;
 	}
 
-	.id, .date, .sep {
-		font-weight: 500;
-		color: var(--bg);
+	.label, .id, .date, .sep {
+		font-weight: 800;
 		display: inline-block;
-		background: var(--bg);
-		color: var(--fg);
 		line-height: 0.682em;
 		text-align: center;
 		vertical-align: middle;
-		padding: 0.682em;
-		border-radius: calc( var(--border) * 0.682 );
+		padding: 0.682em 0em;
+		border-radius: var(--radius);
+		color: var(--fg)!important;
+		mix-blend-mode: difference;
+		text-transform: uppercase;
 	}
 
 
@@ -218,9 +260,6 @@
 		transition: all 0.2s ease;
 	}
 
-	h2 {
-		font-size: calc(1.682em * 1.682 * 1.682);
-	}
 
 	.artist, .title {
 		font-weight: 700;
@@ -261,14 +300,18 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		transform: rotate(90deg);
+		/*transform: rotate(90deg);*/
 	}
 
 	footer.site-footer ul li a {
 		display: block;
 		margin: 0.682em 0em;
 		font-weight: 500;
-		font-size: 1.682em;
+		/*font-size: 1.682em;*/
+		color: var(--fg);
+		mix-blend-mode: difference;
+		text-transform: uppercase;
+		font-size: 0.682em;
 		border-bottom: var(--border) solid var(--fg);
 	}
 
@@ -277,12 +320,17 @@
 	}
 	footer.site-footer ul li a:hover {
 	}
-	footer.site-footer ul li address a {
+	footer.site-footer > address * {
 		font-weight: 700;
+		color: var(--fg)!important;
+		mix-blend-mode: difference;
+		/*font-style: italic;*/
+		font-size: 0.682em;
 	}
 
-	footer.site-footer a {
+	footer.site-footer address a {
 		transition: all 0.2s ease;
 		font-weight: 700;
+		font-style: normal;
 	}
 

@@ -23,31 +23,31 @@ const template = (item) => {
 	
 	return `
 	<article class="release" itemscope itemtype="https://schema.org/MusicRelease">
-		<h2 itemprop="name">
-			<a href="${item.url}" title="[${item.labelId}] ${item.titleName || item.artistName}">
-				<span class="title">${item.titleName || item.artistName}</span>
-			</a>
-		</h2>
-		<div class="player" itemprop="workExample" itemscope itemtype="https://schema.org/AudioObject">
-			
-			<header>
-				
+		<header class="meta">
+			<a class="label" href="${item.url}" >${item.url.split('.')[0].substring(8)}</a>
+			<span class="sep">/</span>
+			<a class="id" href="${item.url}" itemprop="identifier">${item.labelId}</a>
+			<span class="sep">/</span>
+			<time class="date" itemprop="datePublished" datetime="${isoDate}" >${item.date}</time>
+		</header>
 
-				<div class="meta">
-					<a class="id" href="${item.url}" itemprop="identifier">${item.labelId}</a>
-					<span class="sep">/</span>
-					<time class="date" itemprop="datePublished" datetime="${isoDate}" >${item.date}</time>
-				</div>
-			</header>
+		<div class="release-inner">
+			<h2 itemprop="name">
+				<a href="${item.url}" title="[${item.labelId}] ${item.titleName || item.artistName}">
+					<span class="title">${item.titleName || item.artistName}</span>
+				</a>
+			</h2>
+			<div class="player" itemprop="workExample" itemscope itemtype="https://schema.org/AudioObject">
 
-			${embed(item)}
+				${embed(item)}
+			</div>
+
+			<footer>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+				  	<circle cx="50" cy="50" r="50" fill="#CCCCCC" />
+				</svg>
+			</footer>
 		</div>
-
-		<footer>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-			  	<circle cx="50" cy="50" r="50" fill="#CCCCCC" />
-			</svg>
-		</footer>
 	</article>`
 }
 const run = async () => {
@@ -85,7 +85,7 @@ const run = async () => {
 			image,
 			url,
 			date,
-			embedUrl: `https://bandcamp.com/EmbeddedPlayer/album=${titleId}/size=large/bgcol=000000/linkcol=f9f9f9/tracklist=true`
+			embedUrl: `https://bandcamp.com/EmbeddedPlayer/album=${titleId}/size=large/bgcol=ffffff/linkcol=ffffff/tracklist=true`
 		}
 	}))
 

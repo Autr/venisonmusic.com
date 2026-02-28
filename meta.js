@@ -4,10 +4,12 @@ const artistDesc = `Venison is the techno alias of pioneering Jungle and Drum & 
 const artistTags = 'techno, house, afrobeat, breaks, garage, independent artists'
 const artistEmail = 'hello@venisonmusic.com'
 const artistLinks = 'https://soundcloud.com/venisonbeats https://instagram.com/venisonbeats'
+const artistLong = '<span>V</span>enison is the techno alias of pioneering Jungle and Drum & Bass producer Chris Inperspective. Known for his uncompromising vision and boundary-pushing productions, Chris channels a raw, percussive energy through Venison - a project deeply rooted in the grit of classic techno while drawing from the pulse of Afrobeat, the swing of house, and the edge of drum & bass.'
 
 const config = {
 
 	websiteUrl: 'https://venisonmusic.com',
+	websiteIntro: artistLong,
 	websiteName: artistName,
 	websiteLogo: 'venison_logo.jpg',
 	websiteImage: 'venison_music.jpg',
