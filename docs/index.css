@@ -98,7 +98,7 @@
 	@media screen and (max-width: 600px) {
 		.bandcamp-embed {
 
-			aspect-ratio: 1 / 1.5!important;
+			aspect-ratio: 1 / 1.7!important;
 		}
 	}
 
@@ -226,6 +226,7 @@
 	}
 	.release h2 a .title {
 		transition: all 0.2s ease;
+		padding: 0em 0.682em;
 	}
 
 	.meta {
